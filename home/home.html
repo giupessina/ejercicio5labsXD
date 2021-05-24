@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="accordion" id="accordionExample">
+        <h1>Ejercicio LabsXD</h1>
+        <div class="accordion-item" ng-repeat="person in $ctrl.fakeDB">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{person.id}}"
+            aria-expanded="false" aria-controls="collapse{{person.id}}">
+              {{ person.Name }} {{ person.LastName}}
+            </button>
+          </h2>
+          <div id="collapse{{person.id}}" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <ul class="list-group">
+                <li class="list-group-item ">{{ person.Name }}</li>
+                <li class="list-group-item ">{{ person.LastName}}</li>
+                <li class="list-group-item ">{{ person.Edad}}</li>
+                <li class="list-group-item ">{{ person.Biography}}</li>
+                <ul class="list-group" ng-repeat="Telefono in person.Telefono">
+                  <li class="list-group-item">
+                    {{Telefono}}
+                  </li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
